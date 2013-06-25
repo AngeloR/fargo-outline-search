@@ -9,11 +9,13 @@ function clearSearchTags() {
 
 function search(text) {
 	clearSearchTags();
-	$('.concord-wrapper').filter(function (index) {
-		if ($(this).html().indexOf(text) >= 0) {
-			searchTag($(this));
-		}
-	});
+	if(text.trim().length > 0) {
+		$('.concord-wrapper').filter(function (index) {
+			if ($(this).html().indexOf(text) >= 0) {
+				searchTag($(this));
+			}
+		});
+	}
 }
 
 function searchDisplay() {
