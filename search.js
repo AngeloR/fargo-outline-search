@@ -20,5 +20,10 @@ function searchDisplay() {
 	alert('Display the search dialogue');
 }
 
+
+var html = {
+	searchBox: '<div class="input-append"><input class="span2" id="search-terms" type="text"><button class="btn" type="button" onclick="search($(\'#search-terms\').val());"><i class="icon-search"></i></button></div>';
+}
+
 // add the search input to the screen
-$('#idIconChain').find('.divIcon').eq(0).after('<div class="divIcon"><a href="#" rel="tooltip" data-placement="left" data-original-title="Search" onclick="searchDisplay();"><i class="icon-search"></i></a></div>');
+$('#idTabs').prepend(html.searchBox);
