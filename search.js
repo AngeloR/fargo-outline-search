@@ -22,7 +22,7 @@ function searchDisplay() {
 
 
 var html = {
-	searchBox: '<div class="input-append"><input class="span2" id="search-terms" placeholder="Search..." type="text"><button class="btn" type="button" onclick="search($(\'#search-terms\').val());"><i class="icon-search"></i></button></div>'
+	searchBox: '<div id="search-box" class="span12"><div class="input-append"><input class="span6" id="search-terms" placeholder="Search..." type="text"><button class="btn" type="button" onclick="search($(\'#search-terms\').val());"><i class="icon-search"></i></button></div></div>'
 }
 
 // add the search input to the screen
