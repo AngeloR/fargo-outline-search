@@ -15,3 +15,10 @@ function search(text) {
 		}
 	});
 }
+
+function searchDisplay() {
+	alert('Display the search dialogue');
+}
+
+// add the search input to the screen
+$('.idIconChain').find('.divIcon').eq(1).after('<div class="divIcon"><a href="#" rel="tooltip" data-placement="left" data-original-title="Search" onclick="searchDisplay();">");
