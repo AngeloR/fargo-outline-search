@@ -135,7 +135,7 @@ var FargoOutlineSearch = {
 
 		// bind the keyboard event to access search
 		$('body').on('keydown', function(e) {
-			if(e.which === 83 && e.ctrlKey) {
+			if(e.which === 191 && e.ctrlKey) {
 				$('#search-terms').focus();
 			}
 		});
