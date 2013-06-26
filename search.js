@@ -144,6 +144,8 @@ var FargoOutlineSearch = {
 
 		// bind the click event for the search-result-item
 		$('body').on('click', '.search-result-item', function(e) {
+			e.preventDefault();
+			e.stopPropagation();
 			console.log($(this).find('.search-result-item-title').text(), $(this).find('search-result-item-body').text());	
 		});
 
