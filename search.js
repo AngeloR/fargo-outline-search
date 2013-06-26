@@ -1,6 +1,12 @@
+function highlightTab(i, v) {
+	$v = $(v);
+	$('a[href=#' + $v.attr('id')+'] span').append('<span class="badge badge-info">' + $v.find('.search-tag').length + '</span>')  });
+}
+
 function searchTag($obj) {
 	$obj.addClass('search-tag');
 	$obj.parents('.collapsed').removeClass('collapsed');
+	$('.search-tag').closest('.tab-page').each(highlightTab);
 }
 
 function clearSearchTags() {
@@ -28,7 +34,14 @@ var css = {
 	],
 	'#search-box': [
 		'text-align: right'
-	]	
+	],
+	'#idTabsList li a > span': [
+		'position: relative'
+	],
+	'#idTabsList .badge': [
+		'position: absolute',
+		'bottom: 15px'
+	]
 };
 
 var cssSelectors = Object.keys(css), cssStr = '';
