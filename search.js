@@ -22,12 +22,21 @@ var html = {
 	searchBox: '<div id="search-box" class="row"><div class="input-append offset5 span7"><input class="span6" id="search-terms" placeholder="Search..." type="text"><button class="btn" type="button" onclick="search($(\'#search-terms\').val());"><i class="icon-search"></i></button></div></div>'
 }
 
-var css = [
-	'.search-tag { background-color: #ffff22; }',
-	'#search-box { text-align: right; }'	
-];
+var css = {
+	'.search-tag': [
+		'background-color: #ffff22
+	],
+	'#search-box': [
+		'text-align: right'
+	]	
+};
 
-$('head').append('<style>' + css.join("\r\n") + '</style>');
+var cssSelectors = Object.keys(css), cssStr = '';
+for(var i = 0, l = cssSelectors.length; i < l; ++i) {
+	cssStr += cssSelectors[i] + '{' + css[cssSelectors[i]].join("\r\n") + '}';
+}
+
+$('head').append('<style>' + cssStr + '</style>');
 searchInit();
 
 function searchInit() {
