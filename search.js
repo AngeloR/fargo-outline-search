@@ -1,12 +1,14 @@
 function highlightTab(i, v) {
-	$v = $(v);
-	$('a[href=#' + $v.attr('id')+'] span').append('<span class="badge search-tab-counter badge-info">' + $v.find('.search-tag').length + '</span>');
+	var $v = $(v),
+		$el = $('a[href=#' + $v.attr('id') + '] span');
+
+	$el.append('<span class="badge search-tab-counter badge-info">' + $v.find('.search-tag').length + '</span>');
 }
 
 function searchTag($obj) {
 	$obj.addClass('search-tag');
 	$obj.parents('.collapsed').removeClass('collapsed');
-	$('.search-tag').closest('.tab-pane').each(highlightTab);
+	//$('.search-tag').closest('.tab-pane').each(highlightTab);
 }
 
 function clearSearchTags() {
