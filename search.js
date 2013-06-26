@@ -1,6 +1,6 @@
 function highlightTab(i, v) {
 	$v = $(v);
-	$('a[href=#' + $v.attr('id')+'] span').append('<span class="badge badge-info">' + $v.find('.search-tag').length + '</span>');
+	$('a[href=#' + $v.attr('id')+'] span').append('<span class="badge search-tab-counter badge-info">' + $v.find('.search-tag').length + '</span>');
 }
 
 function searchTag($obj) {
@@ -11,6 +11,7 @@ function searchTag($obj) {
 
 function clearSearchTags() {
 	$('.search-tag').removeClass('search-tag'); 
+	$('.search-tab-counter').removeClass('search-tab-counter');
 }
 
 function search(text) {
@@ -38,7 +39,7 @@ var css = {
 	'#idTabsList li a > span': [
 		'position: relative'
 	],
-	'#idTabsList .badge': [
+	'.search-tab-counter': [
 		'position: absolute',
 		'bottom: 15px'
 	]
