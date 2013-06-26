@@ -33,12 +33,18 @@ var FargoOutlineSearch = {
 			'text-align: left',
 			'padding: 6px 10px',
 			'color: #555',
-			'background-color: #f9f9f9',
+			'background-color: #fff',
 			'cursor: pointer'
 		],
+		'.search-result-item:nth-child(odd)': [
+			'background-color: #f9f9f9'
+		],
 		'.search-result-item:hover': [
-			'background-color: #fff',
-			'color: #333'
+			'background-color: #08c',
+			'color: #fff'
+		],
+		'.search-result-item:hover .search-result-item-title, .search-result-item:hover .search-result-item-body': [
+			'color: #fff'
 		],
 		'.search-result-item-title': [
 			'font-weight: bold',
