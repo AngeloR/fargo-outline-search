@@ -23,7 +23,13 @@ var html = {
 }
 
 // add the custom styles
-$('head').append('<link rel="stylesheet" href="https://raw.github.com/AngeloR/fargo-outline-search/master/style.css"></link>');
+var stylesheet = 'https://raw.github.com/AngeloR/fargo-outline-search/master/style.css';
+if(document.createStyleSheet) {
+	document.createStyleSheet(stylsheet);
+}
+else {
+	$('<link rel="stylesheet" type="text/css" href="' + url + '">').appendTo('head');
+}
 
 // add the search input to the screen
 $('#idTabs').prepend(html.searchBox);
