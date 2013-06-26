@@ -1,6 +1,7 @@
 #Fargo Outline Search
-Allows you to search the text nodes within your outliner for specific phrases. It is case sensitive and looks for an exact match at the moment. 
+Allows you to search the text nodes within your outliner for specific phrases. It is case insensitive and currently looks for an exact match.
 
+<img src="https://dl.dropboxusercontent.com/s/6ggvgwvdak2tpgk/FargoOutlineSearch-badges.png?m" alt="Fargo Outline Search">
 
 ## Preferred Installation
 Link directly to the Search script on GitHub for the most up to date version. 
