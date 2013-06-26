@@ -55,7 +55,7 @@ var css = {
 
 var cssSelectors = Object.keys(css), cssStr = '';
 for(var i = 0, l = cssSelectors.length; i < l; ++i) {
-	cssStr += cssSelectors[i] + '{' + css[cssSelectors[i]].join("\r\n") + '}';
+	cssStr += cssSelectors[i] + '{' + css[cssSelectors[i]].join(";\r\n") + '}';
 }
 
 $('head').append('<style>' + cssStr + '</style>');
