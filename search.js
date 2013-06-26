@@ -121,12 +121,19 @@ var FargoOutlineSearch = {
 			}
 		});
 
+		$('body').on('blur', '#search-box', function(e) {
+			$('#search-results li').hide();
+		});
+
+		$('body').on('focus', '#search-box', function(e) {
+			$('#search-results li').show();
+		});
+
 		// bind the keyboard events for the search box
 		$('#idTabs').on('keydown', '#search-box', function(e) {
 			switch(e.which) {
 				case 13:
 					FargoOutlineSearch.search($('#search-terms').val());
-					$('#search-terms').blur();
 					break;
 				case 27:
 					$('#search-terms').blur().val('');
