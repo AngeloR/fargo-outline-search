@@ -25,7 +25,8 @@ var FargoOutlineSearch = {
 			'width: 400px',
 			'max-height: 400px',
 			'overflow: auto',
-			'z-index: 99'
+			'z-index: 99',
+			'box-shadow: 0 1px 2px rgba(0,0,0,0.3)'
 		],
 		'.search-result-item': [
 			'font-size: 14px',
