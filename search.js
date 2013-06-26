@@ -25,7 +25,14 @@ var html = {
 // add the search input to the screen
 $('#idTabs').prepend(html.searchBox);
 
-// bind the keyboard events
+// bind the keyboard event to access search
+$('body').on('keydown', function(e) {
+	if(e.which === 83 && e.ctrlKey) {
+		$('#search-terms').focus();
+	}
+});
+
+// bind the keyboard events for the search box
 $('#idTabs').on('keydown', '#search-box', function(e) {
 	switch(e.which) {
 		case 13:
