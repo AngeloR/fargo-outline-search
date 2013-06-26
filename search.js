@@ -47,7 +47,7 @@ var css = {
 	'#idTabsList li a > span': [
 		'position: relative'
 	],
-	'.': [
+	'.search-tab-counter': [
 		'position: absolute',
 		'bottom: 15px'
 	]
