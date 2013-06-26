@@ -1,14 +1,18 @@
 function highlightTab(i, v) {
 	var $v = $(v),
-		$el = $('a[href=#' + $v.attr('id') + '] span');
+		$el = $('a[href=#' + $v.attr('id') + '] > span');
 
-	$el.append('<span class="badge search-tab-counter badge-info">' + $v.find('.search-tag').length + '</span>');
+	if($el.find('.search-tab-counter').length > 0) {
+		$el.find('.search-tab-counter').html($v.find('.search-tag').length);
+	else {
+		$el.append(html.badge.replace('{badgecount}', $v.find('.search-tag').length);
+	}
 }
 
 function searchTag($obj) {
 	$obj.addClass('search-tag');
 	$obj.parents('.collapsed').removeClass('collapsed');
-	//$('.search-tag').closest('.tab-pane').each(highlightTab);
+	$('.search-tag').closest('.tab-pane').each(highlightTab);
 }
 
 function clearSearchTags() {
@@ -28,7 +32,8 @@ function search(text) {
 }
 
 var html = {
-	searchBox: '<div id="search-box" class="row"><div class="input-append offset5 span7"><input class="span6" id="search-terms" placeholder="Search..." type="text"><button class="btn" type="button" onclick="search($(\'#search-terms\').val());"><i class="icon-search"></i></button></div></div>'
+	searchBox: '<div id="search-box" class="row"><div class="input-append offset5 span7"><input class="span6" id="search-terms" placeholder="Search..." type="text"><button class="btn" type="button" onclick="search($(\'#search-terms\').val());"><i class="icon-search"></i></button></div></div>',
+	badge: '<span class="badge search-tab-counter badge-info">{badgecount}</span>'
 }
 
 var css = {
