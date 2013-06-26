@@ -4,6 +4,7 @@ function highlightTab(i, v) {
 
 	if($el.find('.search-tab-counter').length > 0) {
 		$el.find('.search-tab-counter').html($v.find('.search-tag').length);
+	}
 	else {
 		$el.append(html.badge.replace('{badgecount}', $v.find('.search-tag').length);
 	}
