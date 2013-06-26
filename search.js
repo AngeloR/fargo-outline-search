@@ -140,7 +140,10 @@ var FargoOutlineSearch = {
 		});
 
 		$('body').on('click', function(e) {
-			$('#search-results li').hide();
+			// ignore clicking on the input box
+			if(e.target != $('#search-terms').get(0)) {
+				$('#search-results li').hide();
+			}
 		});
 
 		$('body').on('focus', '#search-box', function(e) {
