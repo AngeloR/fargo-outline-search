@@ -61,7 +61,7 @@ var FargoOutlineSearch = {
 				res += li;
 			});
 
-			console.log(res);
+			$('#search-results').append(res);
 
 			// add the badge
 			$el.append(FargoOutlineSearch.html.badge.replace('{badgecount}', $v.find('.search-tag').length));
@@ -76,6 +76,7 @@ var FargoOutlineSearch = {
 	clearSearchTags: function() {
 		$('.search-tag').removeClass('search-tag'); 
 		$('.search-tab-counter').remove();
+		$('.search-results').html('');
 	},
 	search: function(text) {
 		FargoOutlineSearch.clearSearchTags();
