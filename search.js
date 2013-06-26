@@ -24,7 +24,7 @@ var html = {
 
 var css = {
 	'.search-tag': [
-		'background-color: #ffff22
+		'background-color: #ffff22'
 	],
 	'#search-box': [
 		'text-align: right'
