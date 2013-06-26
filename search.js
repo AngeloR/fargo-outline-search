@@ -11,7 +11,7 @@ function searchTag($obj) {
 
 function clearSearchTags() {
 	$('.search-tag').removeClass('search-tag'); 
-	$('.search-tab-counter').removeClass('search-tab-counter');
+	$('.search-tab-counter').remove();
 }
 
 function search(text) {
@@ -39,7 +39,7 @@ var css = {
 	'#idTabsList li a > span': [
 		'position: relative'
 	],
-	'.search-tab-counter': [
+	'.': [
 		'position: absolute',
 		'bottom: 15px'
 	]
