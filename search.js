@@ -22,16 +22,13 @@ var html = {
 	searchBox: '<div id="search-box" class="row"><div class="input-append offset5 span7"><input class="span6" id="search-terms" placeholder="Search..." type="text"><button class="btn" type="button" onclick="search($(\'#search-terms\').val());"><i class="icon-search"></i></button></div></div>'
 }
 
-// add the custom styles
-var stylesheet = 'https://raw.github.com/AngeloR/fargo-outline-search/master/style.css';
-$.ajax({
-	url: stylesheet,
-	type: 'text/css',
-	success: function(style) {
-		$('head').append('<style>' + style + '</style>');
-		searchInit();
-	}
-});
+var css = [
+	'.search-tag { background-color: #ffff22; }',
+	'#search-box { text-align: right; }'	
+];
+
+$('head').append('<style>' + css.join("\r\n") + '</style>');
+searchInit();
 
 function searchInit() {
 
