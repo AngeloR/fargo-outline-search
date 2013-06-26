@@ -1,6 +1,6 @@
 var FargoOutlineSearch = {
 	html: {
-		searchBox: '<div id="search-box" class="row"><div class="input-append offset5 span7"><input class="span6" id="search-terms" placeholder="Search..." type="text"><button class="btn" type="button" onclick="search($(\'#search-terms\').val());"><i class="icon-search"></i></button></div></div>',
+		searchBox: '<div id="search-box" class="row"><div class="input-append offset5 span7"><input class="span6" id="search-terms" placeholder="Search..." type="text"><button class="btn" type="button" onclick="search($(\'#search-terms\').val());"><i class="icon-search"></i></button></div><ul id="search-results"></ul></div>',
 		badge: '<span class="badge search-tab-counter badge-info">{badgecount}</span>'
 	},
 	css: {
@@ -55,15 +55,13 @@ var FargoOutlineSearch = {
 		}
 		else {
 			// for each tab display the results in the little result displayer window thinger
-			var ul = '<ul id="search-results">';
+			var res = '';
 			$v.find('.search-tag').each(function(i, v) {
 				var li = FargoOutlineSearch.searchListEntry($(this).text(), $el.text());
-				ul += li;
+				res += li;
 			});
 
-			ul += '</ul>';
-
-			console.log(ul);
+			console.log(res);
 
 			// add the badge
 			$el.append(FargoOutlineSearch.html.badge.replace('{badgecount}', $v.find('.search-tag').length));
@@ -95,6 +93,7 @@ var FargoOutlineSearch = {
 		li += '<span class="search-result-item-title">' + tab + '</span>';
 		li += '<span class="search-result-item-body">' + text + '</span>';
 		li += '</li>';
+		return li;
 	},
 	buildCss: function() {
 		var cssSelectors = Object.keys(FargoOutlineSearch.css), cssStr = '';	
