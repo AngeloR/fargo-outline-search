@@ -52,7 +52,7 @@ var FargoOutlineSearch = {
 	},
 	highlightTab: function(i, v) {
 		var $v = $(v),
-			$el = $('a[href=#' + $v.attr('id') + '] > span');
+			$el = $('a[href=#' + $v.attr('id') + ']');
 
 		if($el.find('.search-tab-counter').length > 0) {
 			$el.find('.search-tab-counter').html($v.find('.search-tag').length);
@@ -65,7 +65,7 @@ var FargoOutlineSearch = {
 		// for each tab display the results in the little result displayer window thinger
 		var res = '';
 		$v.find('.search-tag').each(function(i, v) {
-			var li = FargoOutlineSearch.searchListEntry($(this).text(), $el.text());
+			var li = FargoOutlineSearch.searchListEntry($(this).text(), $el.text().replace(/\d(.?)/,''));
 			res += li;
 		});
 
@@ -74,7 +74,6 @@ var FargoOutlineSearch = {
 	searchTag: function($obj) {
 		$obj.addClass('search-tag');
 		$obj.parents('.collapsed').removeClass('collapsed');
-		$('.search-tag').closest('.tab-pane').each(FargoOutlineSearch.highlightTab);
 
 	},
 	clearSearchTags: function() {
@@ -91,6 +90,7 @@ var FargoOutlineSearch = {
 					FargoOutlineSearch.searchTag($(this));
 				}
 			});
+			$('.search-tag').closest('.tab-pane').each(FargoOutlineSearch.highlightTab);
 		}
 	},
 	searchListEntry: function(text, tab, id) {
