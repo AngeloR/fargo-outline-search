@@ -31,5 +31,10 @@ $('#idTabs').on('keydown', '#search-box', function(e) {
 		case 13:
 			search($('#search-terms').val());
 			break;
+		case 83:
+			if(e.ctrlKey) {
+				$('#search-terms').focus();
+			}
+			break;
 	}
 });
