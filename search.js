@@ -37,6 +37,7 @@ $('#idTabs').on('keydown', '#search-box', function(e) {
 	switch(e.which) {
 		case 13:
 			search($('#search-terms').val());
+			$('#search-terms').blur();
 			break;
 		case 27:
 			$('#search-terms').blur().val('');
