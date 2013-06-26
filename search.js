@@ -39,8 +39,12 @@ var FargoOutlineSearch = {
 			'color: #333'
 		],
 		'.search-result-item-title': [
-			'font-weight: bold'
+			'font-weight: bold',
+			'display: block'
 		],
+		'.search-result-item-body': [
+			'display: block'
+		]
 	},
 	highlightTab: function(i, v) {
 		var $v = $(v),
