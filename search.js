@@ -8,7 +8,8 @@ var FargoOutlineSearch = {
 			'background-color: #ffff22'
 		],
 		'#search-box': [
-			'text-align: right'
+			'text-align: right',
+			'position: relative'
 		],
 		'#idTabsList li a > span': [
 			'position: relative'
@@ -16,7 +17,30 @@ var FargoOutlineSearch = {
 		'.search-tab-counter': [
 			'position: absolute',
 			'bottom: 15px'
-		]
+		],
+		'#search-results': [
+			'position: absolute',
+			'right: 0',
+			'top: 30px',
+			'width: 400px',
+			'max-height: 400px',
+			'overflow: auto',
+			'z-index: 99'
+		],
+		'.search-result-item': [
+			'font-size: 14px',
+			'text-align: left',
+			'padding: 6px 10px',
+			'color: #555',
+			'background-color: #f9f9f9'
+		],
+		'.search-result-item:hover': [
+			'background-color: #fff',
+			'color: #333'
+		],
+		'.search-result-item-title': [
+			'font-weight: bold'
+		],
 	},
 	highlightTab: function(i, v) {
 		var $v = $(v),
@@ -42,12 +66,18 @@ var FargoOutlineSearch = {
 	search: function(text) {
 		FargoOutlineSearch.clearSearchTags();
 		if(text.trim().length > 0) {
-			$('.concord-wrapper').filter(function (index) {
+			$('.concord-wrapper').filter(function (index) { 
 				if ($(this).html().toLowerCase().indexOf(text.toLowerCase()) >= 0) {
 					FargoOutlineSearch.searchTag($(this));
 				}
 			});
 		}
+	},
+	searchListEntry: function(text, tab) {
+		var li = '<li class="search-result-item">';
+		li += '<span class="search-result-item-title">' + tab + '</span>';
+		li += '<span class="search-result-item-body">' + text + '</span>';
+		li += '</li>';
 	},
 	buildCss: function() {
 		var cssSelectors = Object.keys(FargoOutlineSearch.css), cssStr = '';	
