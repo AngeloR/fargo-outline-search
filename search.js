@@ -93,8 +93,8 @@ var FargoOutlineSearch = {
 			});
 		}
 	},
-	searchListEntry: function(text, tab) {
-		var li = '<li class="search-result-item">';
+	searchListEntry: function(text, tab, id) {
+		var li = '<li class="search-result-item" data-foslocid="'+id+'">';
 		li += '<span class="search-result-item-title">' + tab + '</span>';
 		li += '<span class="search-result-item-body">' + text + '</span>';
 		li += '</li>';
@@ -140,6 +140,11 @@ var FargoOutlineSearch = {
 					FargoOutlineSearch.clearSearchTags();
 					break;
 			}
+		});
+
+		// bind the click event for the search-result-item
+		$('body').on('click', '.search-result-item', function(e) {
+			console.log($(this).find('.search-result-item-title').text(), $(this).find('search-result-item-body').text());	
 		});
 
 	}
