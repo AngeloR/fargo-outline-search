@@ -32,7 +32,8 @@ var FargoOutlineSearch = {
 			'text-align: left',
 			'padding: 6px 10px',
 			'color: #555',
-			'background-color: #f9f9f9'
+			'background-color: #f9f9f9',
+			'cursor: pointer'
 		],
 		'.search-result-item:hover': [
 			'background-color: #fff',
@@ -40,10 +41,13 @@ var FargoOutlineSearch = {
 		],
 		'.search-result-item-title': [
 			'font-weight: bold',
-			'display: block'
+			'display: block',
+			'margin-bottom: 2px'
 		],
 		'.search-result-item-body': [
-			'display: block'
+			'display: block',
+			'color: #777',
+			'line-height: 18px'
 		]
 	},
 	highlightTab: function(i, v) {
@@ -76,7 +80,7 @@ var FargoOutlineSearch = {
 	clearSearchTags: function() {
 		$('.search-tag').removeClass('search-tag'); 
 		$('.search-tab-counter').remove();
-		$('.search-results').html('');
+		$('#search-results').html('');
 	},
 	search: function(text) {
 		FargoOutlineSearch.clearSearchTags();
