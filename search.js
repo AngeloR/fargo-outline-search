@@ -28,7 +28,7 @@ if(document.createStyleSheet) {
 	document.createStyleSheet(stylsheet);
 }
 else {
-	$('<link rel="stylesheet" type="text/css" href="' + url + '">').appendTo('head');
+	$('<link rel="stylesheet" type="text/css" href="' + stylesheet + '">').appendTo('head');
 }
 
 // add the search input to the screen
