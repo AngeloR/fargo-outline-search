@@ -89,7 +89,8 @@ var FargoOutlineSearch = {
 	},
 	search: function(text) {
 		FargoOutlineSearch.clearSearchTags();
-		if(text.trim().length > 0) {
+		text = text.trim();
+		if(text.length > 0) {
 			$('.concord-wrapper').filter(function (index) { 
 				if ($(this).html().toLowerCase().indexOf(text.toLowerCase()) >= 0) {
 
