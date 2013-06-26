@@ -1,6 +1,6 @@
 function highlightTab(i, v) {
 	$v = $(v);
-	$('a[href=#' + $v.attr('id')+'] span').append('<span class="badge badge-info">' + $v.find('.search-tag').length + '</span>')  });
+	$('a[href=#' + $v.attr('id')+'] span').append('<span class="badge badge-info">' + $v.find('.search-tag').length + '</span>');
 }
 
 function searchTag($obj) {
