@@ -6,7 +6,7 @@ function highlightTab(i, v) {
 		$el.find('.search-tab-counter').html($v.find('.search-tag').length);
 	}
 	else {
-		$el.append(html.badge.replace('{badgecount}', $v.find('.search-tag').length);
+		$el.append(html.badge.replace('{badgecount}', $v.find('.search-tag').length));
 	}
 }
 
