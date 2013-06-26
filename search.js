@@ -24,12 +24,16 @@ var html = {
 
 // add the custom styles
 var stylesheet = 'https://raw.github.com/AngeloR/fargo-outline-search/master/style.css';
-if(document.createStyleSheet) {
-	document.createStyleSheet(stylsheet);
-}
-else {
-	$('<link rel="stylesheet" type="text/css" href="' + stylesheet + '">').appendTo('head');
-}
+$.ajax({
+	url: stylesheet,
+	type: 'text/css',
+	success: function(style) {
+		$('head').append('<style>' + style + '</style>');
+		searchInit();
+	}
+});
+
+function searchInit() {
 
 // add the search input to the screen
 $('#idTabs').prepend(html.searchBox);
@@ -54,3 +58,4 @@ $('#idTabs').on('keydown', '#search-box', function(e) {
 			break;
 	}
 });
+}	
