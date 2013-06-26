@@ -9,3 +9,7 @@ Link directly to the Search script on GitHub for the most up to date version.
 
 ## Alternate Installation
 If you're not comfortable running the above script, you can clone the repository and manually copy and paste the contents of "search.js" into the Settings->Code panel.
+
+
+## Keyboard Shortcuts
+`CTRL+/` - Focuses on the search box
