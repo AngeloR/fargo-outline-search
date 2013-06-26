@@ -6,7 +6,7 @@ function highlightTab(i, v) {
 function searchTag($obj) {
 	$obj.addClass('search-tag');
 	$obj.parents('.collapsed').removeClass('collapsed');
-	$('.search-tag').closest('.tab-page').each(highlightTab);
+	$('.search-tag').closest('.tab-pane').each(highlightTab);
 }
 
 function clearSearchTags() {
