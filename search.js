@@ -94,6 +94,11 @@ var FargoOutlineSearch = {
 		}
 	},
 	searchListEntry: function(text, tab, id) {
+		// fix text length
+		if(text.length > 75) {
+			text = text.substr(0, 72) + '...';
+		}
+
 		var li = '<li class="search-result-item" data-foslocid="'+id+'">';
 		li += '<span class="search-result-item-title">' + tab + '</span>';
 		li += '<span class="search-result-item-body">' + text + '</span>';
