@@ -58,7 +58,7 @@ var FargoOutlineSearch = {
 		$('head').append('<style>' + cssStr + '</style>');
 	},
 	init: function() {
-		buildCss();
+		FargoOutlineSearch.buildCss();
 
 		// add the search input to the screen
 		$('#idTabs').prepend(FargoOutlineSearch.html.searchBox);
