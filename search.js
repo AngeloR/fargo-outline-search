@@ -65,7 +65,6 @@ var FargoOutlineSearch = {
 			$el.find('.search-tab-counter').html($v.find('.search-tag').length);
 		}
 		else {
-
 			// add the badge
 			$el.append(FargoOutlineSearch.html.badge.replace('{badgecount}', $v.find('.search-tag').length));
 		}
@@ -120,6 +119,13 @@ var FargoOutlineSearch = {
 
 		$('head').append('<style>' + cssStr + '</style>');
 	},
+	jumpToSearchResult: function(tab) {
+		$('span[id^=idTabsTitle]').each(function(i, v) { 
+			if($(v).text() == tab){ 
+				$(v).closest('a').click(); 
+			}
+		});
+	},
 	init: function() {
 		FargoOutlineSearch.buildCss();
 
@@ -133,7 +139,7 @@ var FargoOutlineSearch = {
 			}
 		});
 
-		$('body').on('blur', '#search-box', function(e) {
+		$('body').on('click', function(e) {
 			$('#search-results li').hide();
 		});
 
@@ -158,7 +164,8 @@ var FargoOutlineSearch = {
 		$('body').on('click', '.search-result-item', function(e) {
 			e.preventDefault();
 			e.stopPropagation();
-			console.log($(this).find('.search-result-item-title').text(), $(this).find('search-result-item-body').text());	
+
+			FargoOutlineSearch.jumpToSearchResult($(this).find('.search-result-item-title').text());
 		});
 
 	}
