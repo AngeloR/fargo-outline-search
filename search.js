@@ -58,18 +58,18 @@ var FargoOutlineSearch = {
 			$el.find('.search-tab-counter').html($v.find('.search-tag').length);
 		}
 		else {
-			// for each tab display the results in the little result displayer window thinger
-			var res = '';
-			$v.find('.search-tag').each(function(i, v) {
-				var li = FargoOutlineSearch.searchListEntry($(this).text(), $el.text());
-				res += li;
-			});
-
-			$('#search-results').append(res);
 
 			// add the badge
 			$el.append(FargoOutlineSearch.html.badge.replace('{badgecount}', $v.find('.search-tag').length));
 		}
+		// for each tab display the results in the little result displayer window thinger
+		var res = '';
+		$v.find('.search-tag').each(function(i, v) {
+			var li = FargoOutlineSearch.searchListEntry($(this).text(), $el.text());
+			res += li;
+		});
+
+		$('#search-results').append(res);
 	},
 	searchTag: function($obj) {
 		$obj.addClass('search-tag');
