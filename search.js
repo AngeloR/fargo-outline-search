@@ -50,9 +50,9 @@ var FargoOutlineSearch = {
 		}
 	},
 	buildCss: function() {
-		var cssSelectors = Object.keys(css), cssStr = '';	
+		var cssSelectors = Object.keys(FargoOutlineSearch.css), cssStr = '';	
 		for(var i = 0, l = cssSelectors.length; i < l; ++i) {
-			cssStr += cssSelectors[i] + '{' + css[cssSelectors[i]].join(";\r\n") + '}';
+			cssStr += cssSelectors[i] + '{' + FargoOutlineSearch.css[cssSelectors[i]].join(";\r\n") + '}';
 		}
 
 		$('head').append('<style>' + cssStr + '</style>');
