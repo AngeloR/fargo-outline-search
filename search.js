@@ -11,7 +11,7 @@ function search(text) {
 	clearSearchTags();
 	if(text.trim().length > 0) {
 		$('.concord-wrapper').filter(function (index) {
-			if ($(this).html().indexOf(text) >= 0) {
+			if ($(this).html().toLowerCase().indexOf(text.toLowerCase()) >= 0) {
 				searchTag($(this));
 			}
 		});
