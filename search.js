@@ -22,6 +22,9 @@ var html = {
 	searchBox: '<div id="search-box" class="row"><div class="input-append offset5 span7"><input class="span6" id="search-terms" placeholder="Search..." type="text"><button class="btn" type="button" onclick="search($(\'#search-terms\').val());"><i class="icon-search"></i></button></div></div>'
 }
 
+// add the custom styles
+$('head').append('<link rel="stylesheet" href="https://raw.github.com/AngeloR/fargo-outline-search/master/style.css"></link>');
+
 // add the search input to the screen
 $('#idTabs').prepend(html.searchBox);
 
