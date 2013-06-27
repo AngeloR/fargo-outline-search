@@ -1,6 +1,6 @@
 var FargoOutlineSearch = {
 	html: {
-		searchBox: '<div id="search-box" class="row"><div class="input-append offset5 span7"><input class="span6" id="search-terms" placeholder="Search..." type="text"><button class="btn" type="button" onclick="search($(\'#search-terms\').val());"><i class="icon-search"></i></button></div><ul id="search-results"></ul></div>',
+		searchBox: '<div id="search-box" class="row"><div class="input-append offset5 span7"><input class="span6" id="search-terms" placeholder="Search..." type="text"><button class="btn" type="button" onclick="FargoOutlineSearch.search($(\'#search-terms\').val());"><i class="icon-search"></i></button></div><ul id="search-results"></ul></div>',
 		badge: '<span class="badge search-tab-counter badge-info">{badgecount}</span>'
 	},
 	css: {
