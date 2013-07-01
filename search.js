@@ -109,7 +109,7 @@ var FargoOutlineSearch = {
 			text = text.substr(0, 72) + '...';
 		}
 
-		var li = '<li class="search-result-item" data-foslocid="'+$obj.position().top+'">';
+		var li = '<li class="search-result-item" data-foslocid="'+($obj.position().top - 50)+'">';
 		li += '<span class="search-result-item-title">' + tab + '</span>';
 		li += '<span class="search-result-item-body">' + text + '</span>';
 		li += '</li>';
