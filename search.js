@@ -11,6 +11,9 @@ var FargoOutlineSearch = {
 			'text-align: right',
 			'position: relative'
 		],
+		'#search-terms': [
+			'padding: 15px'
+		],
 		'#idTabsList li a > span': [
 			'position: relative'
 		],
@@ -135,7 +138,7 @@ var FargoOutlineSearch = {
 
 		// bind the keyboard event to access search
 		$('body').on('keydown', function(e) {
-			if(e.which === 191 && e.ctrlKey) {
+			if(e.which === 83 && e.ctrlKey && e.shiftKey) {
 				$('#search-terms').focus();
 			}
 		});
