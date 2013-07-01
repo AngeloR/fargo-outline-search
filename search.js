@@ -123,10 +123,12 @@ var FargoOutlineSearch = {
 
 		$('head').append('<style>' + cssStr + '</style>');
 	},
-	jumpToSearchResult: function(tab) {
+	jumpToSearchResult: function($searchItem) {
+		var title = $searchItem.find('.search-result-item-title').text();
 		$('span[id^=idTabsTitle]').each(function(i, v) { 
-			if($(v).text() == tab){ 
+			if($(v).text() == title){ 
 				$(v).closest('a').click(); 
+				window.scrollTo(0, $searchItem.attr('data-foslocid'));
 			}
 		});
 	},
@@ -171,8 +173,8 @@ var FargoOutlineSearch = {
 		$('body').on('click', '.search-result-item', function(e) {
 			e.preventDefault();
 			e.stopPropagation();
-
-			FargoOutlineSearch.jumpToSearchResult($(this).find('.search-result-item-title').text());
+	
+			FargoOutlineSearch.jumpToSearchResult($(this));
 		});
 
 	}
