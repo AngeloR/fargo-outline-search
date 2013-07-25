@@ -96,17 +96,10 @@ var FargoOutlineSearch = {
 		if(text.length > 0) {
 			op.visitAll(function(headline){
 				if(headline.getLineText().toLowerCase().indexOf(text) >= 0) {
-					FargoOutlineSearch.searchTag($(headline.getCursor()).find('.concord-text'));
-				}
-			});
-			/*
-			$('.concord-wrapper').filter(function (index) { 
-				if ($(this).html().toLowerCase().indexOf(text.toLowerCase()) >= 0) {
 
-					FargoOutlineSearch.searchTag($(this));
+					FargoOutlineSearch.searchTag($(headline.getCursor()).find('.concord-text').eq(0));
 				}
 			});
-			*/
 			$('.search-tag').closest('.tab-pane').each(FargoOutlineSearch.highlightTab);
 		}
 	},
