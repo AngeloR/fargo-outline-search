@@ -95,8 +95,8 @@ var FargoOutlineSearch = {
 		text = text.trim();
 		if(text.length > 0) {
 			op.visitAll(function(headline){
-				if(text.indexOf(headline.getLineText().toLowerCase()) >= 0) {
-					console.log(headline);
+				if(headline.getLineText().toLowerCase().indexOf(text) >= 0) {
+					FargoOutlineSearch.searchTag($(headline.getCursor()));
 				}
 			});
 			/*
