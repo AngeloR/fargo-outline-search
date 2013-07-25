@@ -94,12 +94,19 @@ var FargoOutlineSearch = {
 		FargoOutlineSearch.clearSearchTags();
 		text = text.trim();
 		if(text.length > 0) {
+			op.visitAll(function(headline){
+				if(text.indexOf(headline.getLineText().toLowerCase()) >= 0) {
+					console.log(headline);
+				}
+			});
+			/*
 			$('.concord-wrapper').filter(function (index) { 
 				if ($(this).html().toLowerCase().indexOf(text.toLowerCase()) >= 0) {
 
 					FargoOutlineSearch.searchTag($(this));
 				}
 			});
+			*/
 			$('.search-tag').closest('.tab-pane').each(FargoOutlineSearch.highlightTab);
 		}
 	},
