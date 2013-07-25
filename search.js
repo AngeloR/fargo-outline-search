@@ -107,13 +107,14 @@ var FargoOutlineSearch = {
 	},
 	searchListEntry: function(tab, $obj) {
 		// fix text length
+		var text = $obj.text();
 		if(text.length > 75) {
 			text = text.substr(0, 72) + '...';
 		}
 
 		var li = '<li class="search-result-item" data-foslocid="'+($obj.parent().position().top - 50)+'">';
 		li += '<span class="search-result-item-title">' + tab + '</span>';
-		li += '<span class="search-result-item-body">' + $obj.text() + '</span>';
+		li += '<span class="search-result-item-body">' + text + '</span>';
 		li += '</li>';
 		return li;
 	},
