@@ -96,7 +96,7 @@ var FargoOutlineSearch = {
 		if(text.length > 0) {
 			op.visitAll(function(headline){
 				if(headline.getLineText().toLowerCase().indexOf(text) >= 0) {
-					FargoOutlineSearch.searchTag($(headline.getCursor()));
+					FargoOutlineSearch.searchTag($(headline.getCursor()).find('.concord-text'));
 				}
 			});
 			/*
