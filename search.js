@@ -7,6 +7,9 @@ var FargoOutlineSearch = {
 		'.search-tag': [
 			'background-color: #ffff22'
 		],
+		'.concord-cursor.selected .search-tag': [
+		 	'color: #000'
+		],
 		'#search-box': [
 			'text-align: right',
 			'position: relative'
