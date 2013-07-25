@@ -92,11 +92,10 @@ var FargoOutlineSearch = {
 	},
 	search: function(text) {
 		FargoOutlineSearch.clearSearchTags();
-		text = text.trim();
+		text = text.trim().toLowerCase();
 		if(text.length > 0) {
 			op.visitAll(function(headline){
 				if(headline.getLineText().toLowerCase().indexOf(text) >= 0) {
-
 					FargoOutlineSearch.searchTag($(headline.getCursor()).find('.concord-text').eq(0));
 				}
 			});
